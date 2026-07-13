@@ -7,5 +7,6 @@ INSTALLATION: download the .zip, extract, and paste the code in either VScode, t
 I am currently working on how to get it to work with Windows Powershell.
 
 DISCLAIMER! be sure to use pip install termcolor on powershell/vscode/your ide of choice, or SPTCLI will not work and give an error.
+The color will also not show on some IDEs even if you install termcolor, but it will still be functional.
 
 CREDITS: corsair009
