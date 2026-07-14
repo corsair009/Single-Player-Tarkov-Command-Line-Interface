@@ -1,3 +1,5 @@
 0.1.0 - Release
 
 0.1.1 - Added the rest of the rare achievements, added .45 ACP to the Ammo Table.
+
+0.1.2 - Added the rest of all the achievements. Added spacers in the achievement command. Added a "are you sure you want to quit?" input to the quit command.
