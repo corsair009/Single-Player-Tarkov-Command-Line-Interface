@@ -5,3 +5,5 @@
 0.1.2 - Added the rest of all the achievements. Added spacers in the achievement command. Added a "are you sure you want to quit?" input to the quit command.
 
 0.1.3 - Added changelog command, added dev notes in the code for easier organization.
+
+0.1.4 - Bug fix, changed if to elif to fix issues.
