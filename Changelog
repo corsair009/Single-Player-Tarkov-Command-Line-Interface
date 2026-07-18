@@ -7,3 +7,5 @@
 0.1.3 - Added changelog command, added dev notes in the code for easier organization.
 
 0.1.4 - Bug fix, changed if to elif to fix issues.
+
+0.1.5 - Added item ID converter, added the spt wiki to tools command, added a reccomended mods command, changed title color and added a customizable menu.
