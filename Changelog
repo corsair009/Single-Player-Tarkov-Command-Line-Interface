@@ -11,3 +11,5 @@
 0.1.5 - Added item ID converter, added the spt wiki to tools command, added a reccomended mods command, changed title color and added a customizable menu.
 
 0.1.6 - Added more items to the item ID converter, fixed typos, updated UI
+
+0.1.7 - Added more items to the item ID converter, fixed some issues, added more mods to the rm command, added featured mod command, updated UI.
