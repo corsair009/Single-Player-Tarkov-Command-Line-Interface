@@ -3,14 +3,9 @@ import datetime
 import os
 from termcolor import colored
 
-# ==========================
-# DEV NOTE
-# cwd = directory, pyver = python version, ver = current version, date is the current date, debug is a combination and so is titledate
-# ==========================
-
 cwd = os.getcwd() 
 pyver = "3.13VS"
-ver = "Single Player Tarkov Command Line Interface 0.1.5 Beta"
+ver = "Single Player Tarkov Command Line Interface 0.1.6 Beta"
 currenttime = datetime.datetime.now()
 date = f"{currenttime}"
 debug = f"{ver} - {date} - pyver {pyver} - directory:", cwd
@@ -21,7 +16,7 @@ titledate = f"{ver} - {date} - {pyver}"
 # customize the title color by swapping out a color in the 'grey'!
 # ==========================
 
-time.sleep(1)
+time.sleep(2)
 load = colored('SPTCLI successfully loaded', 'green')
 print(load)
 time.sleep(1)
@@ -37,13 +32,11 @@ spt5 = colored('        +#+ +#+           +#+    +#+        +#+            +#+  
 print(spt5)
 spt6 = colored('#+#    #+# #+#           #+#    #+#    #+# #+#            #+#          ', 'grey')
 print(spt6)
-spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.5     ', 'grey')
+spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.6     ', 'grey')
 print(spt7)
 time.sleep(1)
-disclaimer = colored('Disclaimer! This is an early version and is not finished.', 'red')
-print(disclaimer)
-time.sleep(1)
-print(f"{titledate}")
+coloredtitledate = colored(f'{titledate}', 'light_cyan')
+print(coloredtitledate)
 time.sleep(1)
 print(cwd)
 while True:
@@ -77,7 +70,7 @@ while True:
         print("ach (Achievements List)")
         print("cr (Credits)")
         print("cl (Changelog)")
-        print("rm (Reccomended Mods)")
+        print("rm (Recommended Mods)")
         print("iic (item ID converter)")
     elif CMD == "cmc":
         commandolist = colored('### ALL AVAILABLE COMMANDO COMMANDS ###', 'light_cyan')
@@ -225,7 +218,7 @@ while True:
 
 # ==========================
 # DEV NOTE
-# I know icebreaker is being ported to SPT, but for now i will not add it in the maps section.
+# I know icebreaker is being ported to SPT, but for now I will not add it in the maps section.
 # ==========================
 
     elif CMD == "m":
@@ -353,7 +346,7 @@ while True:
             print("Main Elevator - Always Available - Not one time use - Power needed")
             print("Medical Block Elevator - Always available - Not one time use - Power needed")
             print("Parking Gate - Not always available - Not one time use - needs to be activated")
-            print("Sewage Conduit - Always available - not one time use - needs to be drained for 3-4 minutes")
+            print("Sewage Conduit - Always available - not one time use - needs to be drained")
             print("Ventilation Shaft - Always available - not one time use - drop backpack")
 
         if placextract == "Ground Zero":
@@ -514,7 +507,7 @@ while True:
         print("VERYSPOOKY - Enable halloween event with zombies")
         print("ITSONLYSNOWALAN - Enable snow for every raid after the following one")
         print("GIVEMESUNSHINE - Force enable summer season")
-        print("EDITPROFILE - Debug profile tool")
+        print("EDITPROFILE - Reccomended over TOURNAMENTGIFT, safe to use 'enable all'. sets your level skills and money to something high")
         tourngiftwarning = colored ('TOURNAMENTGIFT - Large assortment of items and various profile changes such as player level, skillpoints, Trader levels, etc. WARNING THIS MAKES IRREVERSIBLE, POTENTIALLY UNWANTED, CHANGES TO YOUR PROFILE SUCH AS LESS TRADER STOCK AND NO FLEA.', 'red')
         print(tourngiftwarning)
 
@@ -522,7 +515,7 @@ while True:
 
 
     elif CMD == "cr":
-        credit = colored ('made by @corsair010 on discord, @corsair009 on github', 'light_cyan')
+        credit = colored ('MADE BY CORSAIR009. LICENSED UNDER MIT LICENSE', 'light_cyan')
         print(credit)
 
 
@@ -532,8 +525,8 @@ while True:
         print("0.1.2 - Added the rest of all the achievements. Added spacers in the achievement command. Added a 'are you sure you want to quit?' input to the quit command.")
         print("0.1.3 - Added changelog command, added dev notes in the code for easier organization.")
         print("0.1.4 - Bug fix, changed if to elif to fix issues.")
-        print("0.1.5 - Added item ID converter, added the spt wiki to tools command, added a reccomended mods command, changed title color and added a customizable menu.")
-
+        print("0.1.5 - Added item ID converter, added the spt wiki to tools command, added a recommended mods command, changed title color and added a customizable menu.")
+        print("0.1.6 - Added more items to the item ID converter, fixed typos, updated UI")
 
     elif CMD == "rm":
         rm1 = colored('### PERFORMANCE ###', 'light_cyan')
@@ -562,13 +555,13 @@ while True:
         itemidconvert = colored('Item ID Converter Enabled >', 'green')
         cmd2 = input(itemidconvert)
 
-        if cmd2 == "gpu":
+        if cmd2 == "graphicscard":
             print("57347ca924597744596b4e71")
 
         elif cmd2 == "goldchain":
             print("5734758f24597738025ee253")
 
-        elif cmd2 == "btc":
+        elif cmd2 == "physicalbitcoin":
             print("59faff1d86f7746c51718c9c")
 
         elif cmd2 == "greenkeycard":
@@ -597,6 +590,21 @@ while True:
 
         elif cmd2 == "dollars":
             print("5696686a4bdc2da3298b456a")
+
+        elif cmd2 == "securecontainerkappa":
+            print("5c093ca986f7740a1867ab12")
+
+        elif cmd2 == "securecontainerkappadesecrated":
+            print("676008db84e242067d0dc4c9")
+
+        elif cmd2 == "gpcoin":
+            print("5d235b4d86f7742e017bc88a")
+
+        elif cmd2 == "metalfueltank":
+            print("5d1b36a186f7742523398433")
+
+        elif cmd2 == "labrysaccesskeycard":
+            print("679b9819a2f2dd4da9023512")
 
         else:
             print("unrecognized item")
