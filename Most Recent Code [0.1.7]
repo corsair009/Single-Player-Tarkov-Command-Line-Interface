@@ -5,7 +5,7 @@ from termcolor import colored
 
 cwd = os.getcwd() 
 pyver = "3.13VS"
-ver = "Single Player Tarkov Command Line Interface 0.1.6 Beta"
+ver = "Single Player Tarkov Command Line Interface 0.1.7 Beta"
 currenttime = datetime.datetime.now()
 date = f"{currenttime}"
 debug = f"{ver} - {date} - pyver {pyver} - directory:", cwd
@@ -32,13 +32,12 @@ spt5 = colored('        +#+ +#+           +#+    +#+        +#+            +#+  
 print(spt5)
 spt6 = colored('#+#    #+# #+#           #+#    #+#    #+# #+#            #+#          ', 'grey')
 print(spt6)
-spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.6     ', 'grey')
+spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.7     ', 'grey')
 print(spt7)
 time.sleep(1)
 coloredtitledate = colored(f'{titledate}', 'light_cyan')
 print(coloredtitledate)
 time.sleep(1)
-print(cwd)
 while True:
     CMD = input(">")
     if CMD == "cm":
@@ -72,6 +71,7 @@ while True:
         print("cl (Changelog)")
         print("rm (Recommended Mods)")
         print("iic (item ID converter)")
+        print("fm (Featured Mod)")
     elif CMD == "cmc":
         commandolist = colored('### ALL AVAILABLE COMMANDO COMMANDS ###', 'light_cyan')
         print(commandolist)
@@ -218,7 +218,7 @@ while True:
 
 # ==========================
 # DEV NOTE
-# I know icebreaker is being ported to SPT, but for now I will not add it in the maps section.
+# I know icebreaker is being ported to SPT, but for now i will not add it in the maps section.
 # ==========================
 
     elif CMD == "m":
@@ -288,7 +288,7 @@ while True:
         print("Hammer and Scythe 	Eliminate Tagilla 15 times while playing as a PMC")
         print("King of the Sawmill 	Eliminate Shturman 15 times while playing as a PMC ")
         print("This Is a Tarkov Showdown 	Eliminate Reshala 15 times while playing as a PMC ")
-        print("Another Cold Case Achievement Icon 	Another Cold Case 	Eliminate Glukhar 15 times while playing as a PMC 	")
+        print("Another Cold Case 	Eliminate Glukhar 15 times while playing as a PMC 	")
         print("Who Called the Doctor? 	Eliminate Sanitar 15 times while playing as a PMC ")
         print("Old Dog With Old tricks 	Eliminate Kaban 15 times while playing as a PMC ")
         print("I Hear the Voice of Darkness 	Eliminate Knight 15 times while playing as a PMC ")
@@ -349,7 +349,7 @@ while True:
             print("Sewage Conduit - Always available - not one time use - needs to be drained")
             print("Ventilation Shaft - Always available - not one time use - drop backpack")
 
-        if placextract == "Ground Zero":
+        elif placextract == "Ground Zero":
             gz = colored('### ALL EXTRACTS FOR GROUND ZERO ###', 'light_cyan')
             print(gz)
             print("Emercom Checkpoint - Scav and PMC - Always Available - not one time use")
@@ -360,7 +360,7 @@ while True:
             print("Tartowers Sales Office - Scav and PMC - Always available - note with code word adaptation needed")
             print("escapefromtarkov.fandom.com/wiki/Note_with_code_word_Adaptation")
         
-        if placextract == "Interchange":
+        elif placextract == "Interchange":
             ic = colored('### ALL EXTRACTS FOR INTERCHANGE ###', 'light_cyan')
             print(ic)
             print("Emercom Checkpoint - Scav and PMC - Always available - not one time use")
@@ -370,6 +370,9 @@ while True:
             print("Saferoom Exfil - PMC - Always available - one time use - #11SR keycard needed - use infmode and then")
             print("Saferoom Exfil for more info")
             print("Scav Camp (Co-Op) - 2 people needed, 1 scav 1 pmc - always available - not one time use")
+
+        else:
+            print("unknown map")
 
 
 
@@ -507,7 +510,7 @@ while True:
         print("VERYSPOOKY - Enable halloween event with zombies")
         print("ITSONLYSNOWALAN - Enable snow for every raid after the following one")
         print("GIVEMESUNSHINE - Force enable summer season")
-        print("EDITPROFILE - Reccomended over TOURNAMENTGIFT, safe to use 'enable all'. sets your level skills and money to something high")
+        print("EDITPROFILE - Profile debug")
         tourngiftwarning = colored ('TOURNAMENTGIFT - Large assortment of items and various profile changes such as player level, skillpoints, Trader levels, etc. WARNING THIS MAKES IRREVERSIBLE, POTENTIALLY UNWANTED, CHANGES TO YOUR PROFILE SUCH AS LESS TRADER STOCK AND NO FLEA.', 'red')
         print(tourngiftwarning)
 
@@ -527,6 +530,7 @@ while True:
         print("0.1.4 - Bug fix, changed if to elif to fix issues.")
         print("0.1.5 - Added item ID converter, added the spt wiki to tools command, added a recommended mods command, changed title color and added a customizable menu.")
         print("0.1.6 - Added more items to the item ID converter, fixed typos, updated UI")
+        print("0.1.7 - Added more items to the item ID converter, fixed some issues, added more mods to the rm command, added featured mod command, updated UI.")
 
     elif CMD == "rm":
         rm1 = colored('### PERFORMANCE ###', 'light_cyan')
@@ -548,6 +552,7 @@ while True:
         rm4 = colored('### OTHER ###', 'light_cyan')
         print(rm4)
         print("SAIN by Solarint [forge.sp-tarkov.com/mod/791/sain-solarints-ai-modifications-full-ai-combat-system-replacement]")
+        print("ORBIT by Chazut [forge.sp-tarkov.com/mod/2706/orbit]")
 
 
     elif CMD == "iic":
@@ -606,6 +611,21 @@ while True:
         elif cmd2 == "labrysaccesskeycard":
             print("679b9819a2f2dd4da9023512")
 
+        elif cmd2 == "tetrizportablegameconsole":
+            print("5c12620d86f7743f8b198b72")
+
+        elif cmd2 == "securecontainergammaunheard":
+            print("665ee77ccf2d642e98220bca")
+
+        elif cmd2 == "securecontainergammaeod":
+            print("5857a8bc2459772bad15db29")
+
+        elif cmd2 == "developercaseluckyscavjunkbox":
+            print("5c0a5f6c86f774753654890e")
+
+        elif cmd2 == "luckyscavjunkbox":
+            print("5b7c710788a4506dec015957")
+
         else:
             print("unrecognized item")
 
@@ -626,6 +646,11 @@ while True:
 
         if ask == "no":
             print("")
+
+
+    elif CMD == "fm":
+        featuredmod = colored('Featured Mod: Full-Auto STM-9 [forge.sp-tarkov.com/mod/2827/full-auto-stm-9]', 'yellow')
+        print(featuredmod)
 
     else:
         unrecognized = colored('Unrecognized Command', 'red')
