@@ -9,3 +9,5 @@
 0.1.4 - Bug fix, changed if to elif to fix issues.
 
 0.1.5 - Added item ID converter, added the spt wiki to tools command, added a reccomended mods command, changed title color and added a customizable menu.
+
+0.1.6 - Added more items to the item ID converter, fixed typos, updated UI
