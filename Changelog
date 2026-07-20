@@ -13,3 +13,5 @@
 0.1.6 - Added more items to the item ID converter, fixed typos, updated UI
 
 0.1.7 - Added more items to the item ID converter, fixed some issues, added more mods to the rm command, added featured mod command, updated UI.
+
+0.1.8 - Fixed an issue, added more items to the item ID converter, added clear terminal command.
