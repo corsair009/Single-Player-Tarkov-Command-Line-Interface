@@ -2,10 +2,11 @@ import time
 import datetime
 import os
 from termcolor import colored
+import subprocess
 
 cwd = os.getcwd() 
 pyver = "3.13VS"
-ver = "Single Player Tarkov Command Line Interface 0.1.7 Beta"
+ver = "Single Player Tarkov Command Line Interface 0.1.8 Beta"
 currenttime = datetime.datetime.now()
 date = f"{currenttime}"
 debug = f"{ver} - {date} - pyver {pyver} - directory:", cwd
@@ -32,7 +33,7 @@ spt5 = colored('        +#+ +#+           +#+    +#+        +#+            +#+  
 print(spt5)
 spt6 = colored('#+#    #+# #+#           #+#    #+#    #+# #+#            #+#          ', 'grey')
 print(spt6)
-spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.7     ', 'grey')
+spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.8     ', 'grey')
 print(spt7)
 time.sleep(1)
 coloredtitledate = colored(f'{titledate}', 'light_cyan')
@@ -72,6 +73,7 @@ while True:
         print("rm (Recommended Mods)")
         print("iic (item ID converter)")
         print("fm (Featured Mod)")
+        print("ct (Clear Terminal)")
     elif CMD == "cmc":
         commandolist = colored('### ALL AVAILABLE COMMANDO COMMANDS ###', 'light_cyan')
         print(commandolist)
@@ -117,7 +119,7 @@ while True:
             print("SSA AP	38	57	30%	+6%	-9%	1013	90%	90%	90%	90%	90%	70%")
             
  
-        if ammo == "9mm":
+        elif ammo == "9mm":
             print("RIP	102	2	100%	+5%	—	381	20%	0%	0%	0%	0%	0%")
             print("QuakeMaker	85	8	10%	+10%	+10%	290	80%	0%	0%	0%	0%	0%")
             print("Luger CCI	70	10	25%	—	—	420	90%	0%	0%	0%	0%	0%")
@@ -130,7 +132,7 @@ while True:
 
   
 
-        if ammo == "9×21mm":
+        elif ammo == "9×21mm":
             print("PE gzh	80	15	35%	-5%	+3%	415	90%	50%	0%	0%	0%	0%")
             print("P gzh	65	18	30%	-3%	+1%	413	90%	80%	0%	0%	0%	0%")
             print("PS gzh	59	22	20%	—	—	410	90%	90%	20%	0%	0%	0%")
@@ -139,7 +141,7 @@ while True:
             print("7N42 Zubilo	49	38	10%	+10%	-3%	400	90%	90%	90%	80%	0%	0%")
             
 
-        if ammo == "12/70":
+        elif ammo == "12/70":
             print("RIP	265	2	100%	+35%	+80%	410	20%	0%	0%	0%	0%	0%")
             print("SuperFormance HP	220	5	39%	-15%	+170%	594	50%	0%	0%	0%	0%	0%")
             print("Grizzly 40	190	12	12%	+20%	+80%	390	90%	20%	0%	0%	0%	0%")
@@ -158,7 +160,7 @@ while True:
             print("Piranha	25	24	0%	—	-5%	310	90%	90%	40%	0%	0%	0%")
             print("Flechette	25	31	0%	—	-10%	320	—	—	—	—	—	—")
         
-        if ammo == "5.45mm":
+        elif ammo == "5.45mm":
             print("HP	76	9	35%	-3%	+3%	884	80%	0%	0%	0%	0%	0%")
             print("PRS gs	70	13	30%	-5%	—	866	90%	30%	0%	0%	0%	0%")
             print("SP	67	15	45%	-5%	+5%	873	90%	50%	0%	0%	0%	0%")
@@ -174,7 +176,7 @@ while True:
             print("PPBS (Igolnik)	37	62	2%	+15%	-5%	905	90%	90%	90%	90%	90%	90%")
             
 
-        if ammo == "7.62x39":
+        elif ammo == "7.62x39":
             print("HP	80	15	40%	+5%	-5%	754	90%	50%	0%	0%	0%	0%")
             print("SP	68	20	35%	-5%	+5%	772	90%	90%	0%	0%	0%	0%")
             print("FMJ	63	26	30%	-2%	+2%	775	90%	90%	60%	0%	0%	0%")
@@ -187,7 +189,7 @@ while True:
 
 
 
-        if ammo == "7.62x54R":
+        elif ammo == "7.62x54R":
             print("HP BT	102	26	40%	—	+10%	807	90%	90%	60%	0%	0%	0%")
             print("SP BT	92	31	24%	—	+7%	703	90%	90%	90%	10%	0%	0%")
             print("FMJ	84	36	20%	—	—	760	90%	90%	90%	60%	0%	0%")
@@ -199,7 +201,7 @@ while True:
             print("BS gs	72	70	8.3%	—	—	785	90%	90%	90%	90%	90%	90%")
 
 
-        if ammo == "7.62x51mm":
+        elif ammo == "7.62x51mm":
             print("Ultra Nosler	105	15	70%	-5%	+35%	800	90%	50%	0%	0%	0%	0%")
             print("TCW SP	85	30	35%	-3%	+20%	800	90%	90%	90%	0%	0%	0%")
             print("BCP FMJ	83	37	20%	—	—	840	90%	90%	90%	70%	0%	0%")
@@ -209,12 +211,15 @@ while True:
             print("M61	73	60	14%	+3%	+5%	833	90%	90%	90%	90%	90%	90%")
             print("M993	70	65	13%	+6%	+15%	930	90%	90%	90%	90%	90%	90%")
 
-        if ammo == ".45 ACP":
+        elif ammo == ".45 ACP":
             print("RIP	130	3	100%	—	-5%	293	30%	0%	0%	0%	0%	0%")
             print("Hydra-Shok	100	13	50%	—	—	274	90%	30%	0%	0%	0%	0%")
             print("Lasermatch FMJ	76	19	1%	—	+10%	290	90%	80%	0%	0%	0%	0%")
             print("Match FMJ	72	25	1%	—	—	340	90%	90%	50%	0%	0%	0%")
             print("AP	66	38	1%	+7%	-5%	299	90%	90%	90%	80%	0%	0%")
+
+        else:
+            print("unrecognized caliber")
 
 # ==========================
 # DEV NOTE
@@ -486,7 +491,7 @@ while True:
         if infmode == "TOKTOK1M":
             print("1,000,000 Roubles, Labrys access keycard (Only works in v4.0.0 and above)")
         if infmode == "CUPSERIES":
-            print(" 	LBT-2670 Slim Field Med Pack (Black), M.U.L.E. stimulant injector, SJ1 TGLabs combat stimulant injector, Adrenaline injector, SJ9 TGLabs combat stimulant injector, Obdolbos 2 cocktail injector, 3 x Ibuprofen painkillers, AFAK tactical individual first aid kit, 3 x CALOK-B hemostatic applicator, Grizzly medical kit, Vaseline balm (Only works in v4.0.0 and above)")
+            print("LBT-2670 Slim Field Med Pack (Black), M.U.L.E. stimulant injector, SJ1 TGLabs combat stimulant injector, Adrenaline injector, SJ9 TGLabs combat stimulant injector, Obdolbos 2 cocktail injector, 3 x Ibuprofen painkillers, AFAK tactical individual first aid kit, 3 x CALOK-B hemostatic applicator, Grizzly medical kit, Vaseline balm (Only works in v4.0.0 and above)")
         if infmode == "ARENABATTLE":
             print("Geneburn concert advertisement, Chain with Prokill medallion, 5 x GP coin, Arena poster (Only works in v4.0.0 and above)")
         if infmode == "ROADMAP":
@@ -531,6 +536,7 @@ while True:
         print("0.1.5 - Added item ID converter, added the spt wiki to tools command, added a recommended mods command, changed title color and added a customizable menu.")
         print("0.1.6 - Added more items to the item ID converter, fixed typos, updated UI")
         print("0.1.7 - Added more items to the item ID converter, fixed some issues, added more mods to the rm command, added featured mod command, updated UI.")
+        print("0.1.8 - Fixed an issue, added more items to the item ID converter, added clear terminal command.")
 
     elif CMD == "rm":
         rm1 = colored('### PERFORMANCE ###', 'light_cyan')
@@ -626,8 +632,21 @@ while True:
         elif cmd2 == "luckyscavjunkbox":
             print("5b7c710788a4506dec015957")
 
+        elif cmd2 == "reskeycard":
+            print("6711039f9e648049e50b3307")
+
+        elif cmd2 == "bluekeycard":
+            print("5c1d0c5f86f7744bb2683cf0")
+
+        elif cmd2 == "sicccase":
+            print("5d235bb686f77443f4331278")
+
         else:
             print("unrecognized item")
+            
+
+    elif CMD == "ct":
+        subprocess.run(['cmd', '/c', 'cls'])
 
 
 
@@ -649,7 +668,7 @@ while True:
 
 
     elif CMD == "fm":
-        featuredmod = colored('Featured Mod: Full-Auto STM-9 [forge.sp-tarkov.com/mod/2827/full-auto-stm-9]', 'yellow')
+        featuredmod = colored('Featured Mod: Tylevos Tactical Service Control [forge.sp-tarkov.com/mod/2791/tylevos-tactical-service-control]', 'yellow')
         print(featuredmod)
 
     else:
