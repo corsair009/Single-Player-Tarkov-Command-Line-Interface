@@ -15,3 +15,5 @@
 0.1.7 - Added more items to the item ID converter, fixed some issues, added more mods to the rm command, added featured mod command, updated UI.
 
 0.1.8 - Fixed an issue, added more items to the item ID converter, added clear terminal command.
+
+0.1.9 - Added rich console to SPTCLI, updated UI, added random message to title, added console logging.
