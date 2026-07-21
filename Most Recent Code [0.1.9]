@@ -1,22 +1,24 @@
 import time
+import random
 import datetime
 import os
-from termcolor import colored
 import subprocess
+import json
+import rich
+from termcolor import colored
+from rich.console import Console
+from rich.panel import Panel
+console = Console()
 
 cwd = os.getcwd() 
 pyver = "3.13VS"
-ver = "Single Player Tarkov Command Line Interface 0.1.8 Beta"
+ver = "Single Player Tarkov Command Line Interface 0.1.9 Beta"
 currenttime = datetime.datetime.now()
 date = f"{currenttime}"
 debug = f"{ver} - {date} - pyver {pyver} - directory:", cwd
 titledate = f"{ver} - {date} - {pyver}"
 
-# ==========================
-# DEV NOTE
-# customize the title color by swapping out a color in the 'grey'!
-# ==========================
-
+console.log("Loading SPTCLI...")
 time.sleep(2)
 load = colored('SPTCLI successfully loaded', 'green')
 print(load)
@@ -33,12 +35,31 @@ spt5 = colored('        +#+ +#+           +#+    +#+        +#+            +#+  
 print(spt5)
 spt6 = colored('#+#    #+# #+#           #+#    #+#    #+# #+#            #+#          ', 'grey')
 print(spt6)
-spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.8     ', 'grey')
+spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.9', 'grey')
 print(spt7)
 time.sleep(1)
-coloredtitledate = colored(f'{titledate}', 'light_cyan')
-print(coloredtitledate)
+console.print(f"[bold cyan]{titledate}[/bold cyan]")
 time.sleep(1)
+randmessage = [
+    "Barely functioning since 2026",
+    "Hot take. Customs is ass",
+    "Hot take. Lighthouse is awesome",
+    "Nikita, fix your goddamn game!",
+    "500$ Super-unheard edition coming soon.",
+    "Nikita please add the anime girl update, add it and my life is yours!",
+    "Higher texture settings has higher performance.",
+    "Fun fact! i can't touch my toes while standing.",
+    "Try to lick your elbow. it's impossible!",
+    "0.2.0 is going to be lit!",
+    "Terminal is straight bullshit on live",
+    "Fun fact! when you wake up in the morning, you are 1 centimeter taller, because of spinal compression!",
+    "Check out Contract Wars, Nikita's prequel to tarkov!",
+    "BD stands for bullshit division"
+
+
+]
+randomrandom = random.choice(randmessage)
+print(randomrandom)
 while True:
     CMD = input(">")
     if CMD == "cm":
@@ -94,10 +115,6 @@ while True:
         print("Currency Converter: www.tarkovguide.net/calculator")
         print("SPT Wiki: wiki.sp-tarkov.com")
 
-# ==========================
-# DEV NOTE
-# You can add your own ammo with 'if ammo == "(ammo name)":
-# ==========================
 
     
     elif CMD == "a":
@@ -221,10 +238,6 @@ while True:
         else:
             print("unrecognized caliber")
 
-# ==========================
-# DEV NOTE
-# I know icebreaker is being ported to SPT, but for now i will not add it in the maps section.
-# ==========================
 
     elif CMD == "m":
         mapsee = colored('### ALL AVAILABLE MAPS ###', 'light_cyan')
@@ -338,10 +351,7 @@ while True:
         qwex = colored('Extract Info Mode Enabled >', 'green')
         placextract = input(qwex)
 
-# ==========================
-# DEV NOTE
-# currently not finished
-# ==========================
+
         
         if placextract == "Labs":
             labs = colored('### ALL EXTRACTS FOR LABS ###', 'light_cyan')
@@ -402,100 +412,103 @@ while True:
             print("3.Swipe Object #11SR keycard at revealed keycard panel")
             print("4.Lock the extraction door from inside with the button next to it")
 
-        if infmode == "NewYear2023":
+        elif infmode == "NewYear2023":
             print("VSK-94 9x39 rifle, 4 x A-91 mags, 210 x 9x39mm SP-5 gs ammo, NeoSteel High Cut Helmet, RK-PT-25 Backpack, Balaclava, Milk, Vodka, Condensed Milk, Violet Ornament, Silver Ornament, Red Ornament")
-        if infmode == "NewYear2021":
+        elif infmode == "NewYear2021":
             print("Mk 17 LB, 4 x Mk17 30-round mags, 120 x 7.62x51mm M80 ammo, Ammo box, 3 x RGN Hand grenade, 3 x M7290 Flash Bang grenade, Keycards holder case, Fake white beard")
-        if infmode == "Christmas2022":
+        elif infmode == "Christmas2022":
             print("Large Christmas gift, 2 x Small Christmas gifts, Ammo box, Buckwheat")
-        if infmode == "1CLICKDRESSUP":
+        elif infmode == "1CLICKDRESSUP":
             print("MDR 7.62x51 Killtube, Death Knight mask, Crye Precision CPC plate carrier (Goons Edition), Weapon case")
-        if infmode == "BARMALEY":
+        elif infmode == "BARMALEY":
             print("RSh-12 12.7x55 revolver, Chiappa Rhino 50DS .357 revolver, 120 x 12.7x55mm PS12B ammo, 120 x .357 Magnum HP ammo, Moonshine, 2 x Ammo boxes")
-        if infmode == "S00NS00N":
+        elif infmode == "S00NS00N":
             print("Medicine case, Keycards holder case, 5 x Labs access keycards, Propital stim, eTG-c stim, Zagustin stim, Morphine stim, SJ6 stim")
-        if infmode == "TRAMBON":
+        elif infmode == "TRAMBON":
             print("LBT-6094A Slick Plate Carrier, FORT Redut-M body armor, CQC Osprey MK4A plate carrier (Protection, MTP), Armor repair kit")
-        if infmode == "PINEWOOD":
+        elif infmode == "PINEWOOD":
             print("Mk-18 Mjolnir, 20 x .338 Lapua Magnum AP ammo, Chekannaya 15 apartment key")
-        if infmode == "HESOYAM":
+        elif infmode == "HESOYAM":
             print("250,000 Roubles")
-        if infmode == "PraporGiftDay1":
+        elif infmode == "PraporGiftDay1":
             print("CSA chest rig, CMS surgical kit, Salewa first aid kit")
-        if infmode == "PraporGiftDay2":
+        elif infmode == "PraporGiftDay2":
             print("WARTECH Berkut BB-102 Backpack, AI-2 medkit, Army bandage")
-        if infmode == "MechanicGiftDay1":
+        elif infmode == "MechanicGiftDay1":
             print("Construction measuring tape")
-        if infmode == "KAPPA4U":
+        elif infmode == "KAPPA4U":
             print("Secure container Kappa")
-        if infmode == "ENDOFWIPE":
+        elif infmode == "ENDOFWIPE":
             print("1,000,000 Roubles")
-        if infmode == "IAMADIRTYLITTLEGOBLIN":
+        elif infmode == "IAMADIRTYLITTLEGOBLIN":
             print("Dev Balaclava")
-        if infmode == "CHOMP":
+        elif infmode == "CHOMP":
             print("Raven figurine")
-        if infmode == "CWX":
+        elif infmode == "CWX":
             print ("2 x Toilet Paper")
-        if infmode == "VALENS":
+        elif infmode == "VALENS":
             print("Sprinfield Armory M1A 7.62x51 rifle block, Knight’s Armament Company SR-25 7.62x51 marksman rifle block")
-        if infmode == "TERKOIZ":
+        elif infmode == "TERKOIZ":
             print("SMW car key")
-        if infmode == "WAFFLE":
+        elif infmode == "WAFFLE":
             print("Milk, Oatflakes")
-        if infmode == "NIGHTWING":
+        elif infmode == "NIGHTWING":
             print("Milk, Oatflakes")
-        if infmode == "BSGBIRTHDAY2023":
+        elif infmode == "BSGBIRTHDAY2023":
             print("NPP KIASS Kora-Kulon body armor, DIY IDEA chest rig, MSA ACH TC-2001 MICH Series helmet, Walker’s XCEL 500BT Digital headset, MP-43 12ga sawed-off double-barrel shotgun, SVT-40 7.62x54R rifle (Sniper), Moonshine")
-        if infmode == "GROUNDZERO":
+        elif infmode == "GROUNDZERO":
             print("Injector case")
-        if infmode == "IAMMIGHTY":
+        elif infmode == "IAMMIGHTY":
             print("HighCom Trooper TFO body armor, HK G28 7.62x51 marksman rifle (Patrol), M4A1 5.56x45 assault rifle (SAI)")
-        if infmode == "ARMORPLATES":
+        elif infmode == "ARMORPLATES":
             print("ANA Tactical M1 plate carrier, Crye Precision AVS plate carrier, ULACH IIIA helmet (Tan)")
-        if infmode == "RICHANDEXPENSIVE":
+        elif infmode == "RICHANDEXPENSIVE":
             print("2 x Propital stims, 2 x Zagustin stims, 2 x Meldonin stims, 2 x Trimadol stims, 2 x eTG-c stims")
-        if infmode == "LEFTHANDHEADEYESE":
+        elif infmode == "LEFTHANDHEADEYESE":
             print("Phased array element (AESA), Intelligence folder, Metal fuel tank")
-        if infmode == "TWITCHNEWYEARS2023":
+        elif infmode == "TWITCHNEWYEARS2023":
             print("VSK-94 9x39 rifle (Tactical), PPSh-41 7.62x25 submachine gun, AK-545 Short 5.45x39 carbine, Sprinfield Armory M1A 7.62x51 rifle (EBR), MP-133 12ga pump-action shotgun, MP-153 12ga semmi-automatic shotgun, 60 x 5.56x45mm M855 ammo, Poyas-A + Poyas-B gear rig, Hazard 4 Takedown sling backpack, Slender mask, AFAK first aid kit, 2 x Surv12 field surgical kits, MRE ration pack, Gunpowder “Kite”, 2 x Gunpowder “Eagle”, Analog thermometer, Power supply unit, 3 x CPU fans")
-        if infmode == "LUNARNEWYEAR2024":
+        elif infmode == "LUNARNEWYEAR2024":
             print("TDI KRISS Vector Gen.2 .45 ACP submachine gun, 3 x G30 MagEx 30-round mags, 90 x .45 ACP Lasermatch FMJ ammo, AFAK first aid kit, Vita juice, Hot Rod, TarCola, 4 x Buckwheat")
-        if infmode == "ETSREWARD":
+        elif infmode == "ETSREWARD":
             print("FN SCAR-L 5.56x45 assualt rifle (Contract Wars), 6 x Mk16 30-round mags, 300 x 5.56x45mm M855A1 ammo, Weapons case, Keycards holder case")
-        if infmode == "KONTOROVICH":
+        elif infmode == "KONTOROVICH":
             print("AKS-74UN 5.45x39 assault rifle (Zenit), SIG P226R 9x19 pistol (Tactical), 100 x 9x19mm Luger CCI ammo")
-        if infmode == "UNHEARD":
+        elif infmode == "UNHEARD":
             print("250 Dollars")
-        if infmode == "HIDEOUTCAT":
+        elif infmode == "HIDEOUTCAT":
             print("Mr Kerman’s cat hologram")
-        if infmode == "KILLA":
+        elif infmode == "KILLA":
             print("Graphics Card, Injector case")
-        if infmode == "BITCOIN":
+        elif infmode == "BITCOIN":
             print("2 x ComTac IV, HighCom Trooper TFO body armor (MultiCam),MCX Spear 6.8, M4A1 SAI")
-        if infmode == "GROUNDZERO2":
+        elif infmode == "GROUNDZERO2":
             print("BNTI Gzhel-K body armor, CQC Osprey MK4A plate carrier (Protection, MTP), 2 x HighCom Striker ULACH IIIA helmet (Desert Tan), Grenade case")
-        if infmode == "OBDOLBOS":
+        elif infmode == "OBDOLBOS":
             print("2 x Propital, 2 x Zagustin, 2 x Meldonin, 2 x Trimadol, 2 x eTG-c, 2 x Perfotoran, 2 x Golden Star, 2 x M.U.L.E")
-        if infmode == "THICC":
+        elif infmode == "THICC":
             print("Kalashnikov PKM 7.62x54R machine gun, NFM THOR Integrated Carrier body armor, Physical bitcoin, Intelligence")
-        if infmode == "STREAMERLOOT":
+        elif infmode == "STREAMERLOOT":
             print("Streamer Item Case, Twitch Drops Summer 2024 case (Epic), Twitch Drops Summer 2024 case (Rare), Twitch Drops")
-        if infmode == "500CIGARETTES":
+        elif infmode == "500CIGARETTES":
             print("1x Strike Cigarettes")
-        if infmode == "STASHQOL":
+        elif infmode == "STASHQOL":
             print("2 x Ammunition case, Lucky Scav Junk box, T H I C C item case, Item case, Weapon case, Medicine case, Mr. Holodilnick thermal bag, Magazine case, 2 x Documents case, Key tool, Dogtag case, S I C C organizational pouch")
-        if infmode == "SPLASH":
+        elif infmode == "SPLASH":
             print("3 x RSP-30 reactive signal cartridge (Blue)")
-        if infmode == "NewYear2024":
+        elif infmode == "NewYear2024":
             print("MPS Auto Assault-12 Gen 1 12ga automatic shotgun TerraGroup Labs, 3 x AA-12 12ga 20-round drum magazine, 60 x 12/70 RIP, 2 x Bottle of Tarkovskaya vodka, 2 x Bottle of Dan Jackiel whiskey, MTEK FLUX Ballistic helmet (MultiCam Alpine), Spiritus Systems Bank Robber chest rig (MultiCam Alpine), LBT-1476A 3Day Pack (MultiCam Alpine)")
-        if infmode == "TOKTOK1M":
+        elif infmode == "TOKTOK1M":
             print("1,000,000 Roubles, Labrys access keycard (Only works in v4.0.0 and above)")
-        if infmode == "CUPSERIES":
+        elif infmode == "CUPSERIES":
             print("LBT-2670 Slim Field Med Pack (Black), M.U.L.E. stimulant injector, SJ1 TGLabs combat stimulant injector, Adrenaline injector, SJ9 TGLabs combat stimulant injector, Obdolbos 2 cocktail injector, 3 x Ibuprofen painkillers, AFAK tactical individual first aid kit, 3 x CALOK-B hemostatic applicator, Grizzly medical kit, Vaseline balm (Only works in v4.0.0 and above)")
-        if infmode == "ARENABATTLE":
+        elif infmode == "ARENABATTLE":
             print("Geneburn concert advertisement, Chain with Prokill medallion, 5 x GP coin, Arena poster (Only works in v4.0.0 and above)")
-        if infmode == "ROADMAP":
+        elif infmode == "ROADMAP":
             print("DevTac Ronin Respirator, Ars Arma CPC MOD.1 plate carrier (A-TACS FG), Eberlestock F5 Switchblade backpack (Dry Earth), 240 x 5.56x45mm M995, 3 x AR-15 5.56x45 Magpul PMAG 30 GEN M3 W STANAG 30-round magazine (FDE), Lone Star TX-15 DML 5.56x45 carbine (Only works in v4.0.0 and above)")
+     
+        else:
+            console.print("[italic red]Unrecognized Input[/italic red]")
 
 
     elif CMD == "fd":
@@ -528,7 +541,7 @@ while True:
 
 
     elif CMD == "cl":
-        print("0.1.0 - Release")
+        console.print("[bold cyan]0.1.0 - Release[/bold cyan]")
         print("0.1.1 - Added the rest of the rare achievements, added .45 ACP to the Ammo Table.")
         print("0.1.2 - Added the rest of all the achievements. Added spacers in the achievement command. Added a 'are you sure you want to quit?' input to the quit command.")
         print("0.1.3 - Added changelog command, added dev notes in the code for easier organization.")
@@ -537,6 +550,7 @@ while True:
         print("0.1.6 - Added more items to the item ID converter, fixed typos, updated UI")
         print("0.1.7 - Added more items to the item ID converter, fixed some issues, added more mods to the rm command, added featured mod command, updated UI.")
         print("0.1.8 - Fixed an issue, added more items to the item ID converter, added clear terminal command.")
+        print("0.1.9 - Added rich console to SPTCLI, updated UI, added random message to title, added console logging.")
 
     elif CMD == "rm":
         rm1 = colored('### PERFORMANCE ###', 'light_cyan')
@@ -672,5 +686,4 @@ while True:
         print(featuredmod)
 
     else:
-        unrecognized = colored('Unrecognized Command', 'red')
-        print(unrecognized)
+         console.print("[italic red]Unrecognized Command[/italic red]")
