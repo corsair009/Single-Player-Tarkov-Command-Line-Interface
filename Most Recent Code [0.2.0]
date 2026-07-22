@@ -5,20 +5,25 @@ import os
 import subprocess
 import json
 import rich
+import shlex
 from termcolor import colored
 from rich.console import Console
 from rich.panel import Panel
+from rich.progress import track
+from rich.traceback import install
 console = Console()
 
 cwd = os.getcwd() 
 pyver = "3.13VS"
-ver = "Single Player Tarkov Command Line Interface 0.1.9 Beta"
+ver = "Single Player Tarkov Command Line Interface 0.2.0 Beta"
 currenttime = datetime.datetime.now()
 date = f"{currenttime}"
 debug = f"{ver} - {date} - pyver {pyver} - directory:", cwd
 titledate = f"{ver} - {date} - {pyver}"
 
-console.log("Loading SPTCLI...")
+for i in track(range(100), description="Loading..."):
+    time.sleep(0.02)
+console.log("Loaded SPTCLI")
 time.sleep(2)
 load = colored('SPTCLI successfully loaded', 'green')
 print(load)
@@ -35,26 +40,55 @@ spt5 = colored('        +#+ +#+           +#+    +#+        +#+            +#+  
 print(spt5)
 spt6 = colored('#+#    #+# #+#           #+#    #+#    #+# #+#            #+#          ', 'grey')
 print(spt6)
-spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.1.9', 'grey')
+spt7 = colored('########  ###           ###     ########  ########## ###########  v.0.2.0', 'grey')
 print(spt7)
 time.sleep(1)
 console.print(f"[bold cyan]{titledate}[/bold cyan]")
 time.sleep(1)
 randmessage = [
-    "Barely functioning since 2026",
-    "Hot take. Customs is ass",
-    "Hot take. Lighthouse is awesome",
+    "Barely functioning since 2026!",
     "Nikita, fix your goddamn game!",
     "500$ Super-unheard edition coming soon.",
-    "Nikita please add the anime girl update, add it and my life is yours!",
-    "Higher texture settings has higher performance.",
-    "Fun fact! i can't touch my toes while standing.",
     "Try to lick your elbow. it's impossible!",
-    "0.2.0 is going to be lit!",
-    "Terminal is straight bullshit on live",
-    "Fun fact! when you wake up in the morning, you are 1 centimeter taller, because of spinal compression!",
-    "Check out Contract Wars, Nikita's prequel to tarkov!",
-    "BD stands for bullshit division"
+    "Is your refrigerator running?",
+    "100% pure!",
+    "May contain nuts!",
+    "Limited edition!",
+    "Best in class!",
+    "Made in the USA!",
+    "Keyboard compatible!",
+    "That's no moon!",
+    "l33t!",
+    "The bee's knees!",
+    "90% bug free!",
+    "13 herbs and spices!",
+    "Legal in Finland!",
+    "Hot tamale, hot hot tamale!",
+    "Macroscopic!",
+    "Random splash!",
+    "Ultimate edition!",
+    "Not as cool as Spock!",
+    "Thousands of colors! ",
+    "Sensational! ",
+    "You've got a brand new key! ",
+    "Whoa, dude! ",
+    "Full of stars! ",
+    "Han shot first! ",
+    "Falling off cliffs! ",
+    "Punching wood! ",
+    "umop-apisdn! ",
+    "Finger-licking!",
+    "Pneumatic! ",
+    "SWM forever! ",
+    "Supercalifragilisticexpialidocious! ",
+    "Internet enabled! ",
+    "Give us Gordon! ",
+    "Now with 200% more CLI!",
+    "0.2.0, Baby!",
+    "12345 is a bad password! ",
+    "Lives in a pineapple under the sea! ",
+
+
 
 
 ]
@@ -95,6 +129,9 @@ while True:
         print("iic (item ID converter)")
         print("fm (Featured Mod)")
         print("ct (Clear Terminal)")
+        print("pv (Python Version)")
+        print("w (Whoami)")
+        print("n (Notepad)")
     elif CMD == "cmc":
         commandolist = colored('### ALL AVAILABLE COMMANDO COMMANDS ###', 'light_cyan')
         print(commandolist)
@@ -354,8 +391,7 @@ while True:
 
         
         if placextract == "Labs":
-            labs = colored('### ALL EXTRACTS FOR LABS ###', 'light_cyan')
-            print(labs)
+            console.print(f"[bold cyan]### ALL EXTRACTS FOR LABS ###[/bold cyan]")
             print("Cargo Elevator - Always Available - One time use - Power needed")
             print("Hangar Gate - Not Always Available - Not one time use - Needs door to be opened")
             print("Main Elevator - Always Available - Not one time use - Power needed")
@@ -365,8 +401,7 @@ while True:
             print("Ventilation Shaft - Always available - not one time use - drop backpack")
 
         elif placextract == "Ground Zero":
-            gz = colored('### ALL EXTRACTS FOR GROUND ZERO ###', 'light_cyan')
-            print(gz)
+            console.print(f"[bold cyan]### ALL EXTRACTS FOR GROUND ZERO ###[/bold cyan]")
             print("Emercom Checkpoint - Scav and PMC - Always Available - not one time use")
             print("Mira Ave (Flare) - PMC only - Always available - not one time use - flare needed (flare found on body nearby)")
             print("Nakatani Basement Stairs - Scav and PMC - Always available - not one time use")
@@ -376,8 +411,7 @@ while True:
             print("escapefromtarkov.fandom.com/wiki/Note_with_code_word_Adaptation")
         
         elif placextract == "Interchange":
-            ic = colored('### ALL EXTRACTS FOR INTERCHANGE ###', 'light_cyan')
-            print(ic)
+            console.print(f"[bold cyan]### ALL EXTRACTS FOR INTERCHANGE ###[/bold cyan]")
             print("Emercom Checkpoint - Scav and PMC - Always available - not one time use")
             print("Path to River (Flare) - PMC - Always available - not one time use - flare needed")
             print("Power Station V-Ex - PMC - Not always available - one time use - 4-20k roubles needed - 60s extract")
@@ -551,26 +585,23 @@ while True:
         print("0.1.7 - Added more items to the item ID converter, fixed some issues, added more mods to the rm command, added featured mod command, updated UI.")
         print("0.1.8 - Fixed an issue, added more items to the item ID converter, added clear terminal command.")
         print("0.1.9 - Added rich console to SPTCLI, updated UI, added random message to title, added console logging.")
+        console.print("[bold cyan]0.2.0 - Added a ton more splash screen messages, added loading bars, added a lot of helpful commands.[/bold cyan]")
 
     elif CMD == "rm":
-        rm1 = colored('### PERFORMANCE ###', 'light_cyan')
-        print(rm1)
+        console.print(f"[bold cyan]### PERFORMANCE ###[/bold cyan]")
         print("AI Limit by wizard83 [forge.sp-tarkov.com/mod/1945/ai-limit]")
         print("SPTCorpseCleaner by ragnaroks [forge.sp-tarkov.com/mod/2058/sptcorpsecleaner]")
         print("DERP by sh1ba [forge.sp-tarkov.com/mod/2200/dynamic-external-resolution-patch-derp]")
         print("Remove The Dead by jbs4bmx [forge.sp-tarkov.com/mod/1551/remove-the-dead]")
-        rm2 = colored('### CONTENT ###', 'light_cyan')
-        print(rm2)
+        console.print(f"[bold cyan]### CONTENT ###[/bold cyan]")
         print("WTT - Artem by crackbone [forge.sp-tarkov.com/mod/1023/wtt-artem]")
         print("WTT - Armory by Tron [forge.sp-tarkov.com/mod/2246/wtt-armory]")
         print("Epic's All In One by EpicRangeTime [forge.sp-tarkov.com/mod/1263/epics-all-in-one]")
         print("WTT - Content Backport by GrooveypenguinX [forge.sp-tarkov.com/mod/2512/wtt-content-backport]")
-        rm3 = colored('### QUALITY OF LIFE ###', 'light_cyan')
-        print(rm3)
+        console.print(f"[bold cyan]### QOL ###[/bold cyan]")
         print("UI Fixes by tyfon [forge.sp-tarkov.com/mod/1342/ui-fixes]")
         print("QuickSellFlea by Lacyway [forge.sp-tarkov.com/mod/2407/quicksellflea]")
-        rm4 = colored('### OTHER ###', 'light_cyan')
-        print(rm4)
+        console.print(f"[bold cyan]### OTHER ###[/bold cyan]")
         print("SAIN by Solarint [forge.sp-tarkov.com/mod/791/sain-solarints-ai-modifications-full-ai-combat-system-replacement]")
         print("ORBIT by Chazut [forge.sp-tarkov.com/mod/2706/orbit]")
 
@@ -662,6 +693,23 @@ while True:
     elif CMD == "ct":
         subprocess.run(['cmd', '/c', 'cls'])
 
+    elif CMD == "pv":
+         subprocess.run(["python", "--version"])
+
+    elif CMD == "w":
+        subprocess.run(["whoami"])
+
+    elif CMD == "n":
+        for i in track(range(100), description="Opening notepad"):
+         time.sleep(0.01)
+        subprocess.run(["notepad"])
+
+    elif CMD == "ar":
+        command_line = input()
+        args = shlex.split(command_line)
+        print(args)
+
+
 
 
 
@@ -677,8 +725,7 @@ while True:
          print(quit)
          break
 
-        if ask == "no":
-            print("")
+
 
 
     elif CMD == "fm":
