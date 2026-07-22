@@ -16,4 +16,6 @@
 
 0.1.8 - Fixed an issue, added more items to the item ID converter, added clear terminal command.
 
-0.1.9 - Added rich console to SPTCLI, updated UI, added random message to title, added console logging.
+0.1.9 - Added rich console to SPTCLI, updated UI, added splash messages to title, added console logging.
+
+0.2.0 - Added a ton more splash screen messages, added loading bars, added a lot of helpful commands.
